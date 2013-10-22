@@ -58,8 +58,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\data\" />
-    <Folder Include="Content\images\" />
+    <Folder Include="Scripts\app\viewmodels\" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -91,21 +90,27 @@
     <Content Include="Content\bootstrap\bootstrap.min.css" />
     <Content Include="Content\bootstrap\store-theme.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\0.jpg" />
+    <Content Include="Content\images\1.jpg" />
+    <Content Include="Content\images\2.jpg" />
     <Content Include="Index.html" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
-    <Content Include="Scripts\knockout-2.3.0.debug.js" />
-    <Content Include="Scripts\knockout-2.3.0.js" />
-    <Content Include="Scripts\knockout.mapping-latest.debug.js" />
-    <Content Include="Scripts\knockout.mapping-latest.js" />
-    <Content Include="Scripts\knockout.validation.debug.js" />
-    <Content Include="Scripts\knockout.validation.js" />
+    <Content Include="Content\data\products.json" />
+    <None Include="Scripts\libs\jquery\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\app\services\storeService.js" />
+    <Content Include="Scripts\libs\bootstrap\bootstrap.js" />
+    <Content Include="Scripts\libs\bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\libs\jquery\jquery-1.9.1.js" />
+    <Content Include="Scripts\libs\jquery\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\libs\knockout\knockout-2.3.0.debug.js" />
+    <Content Include="Scripts\libs\knockout\knockout-2.3.0.js" />
+    <Content Include="Scripts\libs\knockout\knockout.mapping-latest.debug.js" />
+    <Content Include="Scripts\libs\knockout\knockout.mapping-latest.js" />
+    <Content Include="Scripts\libs\knockout\knockout.validation.debug.js" />
+    <Content Include="Scripts\libs\knockout\knockout.validation.js" />
+    <Content Include="ShoopingCart.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -148,7 +153,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <Content Include="packages.config" />
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Scripts\libs\jquery\jquery-1.9.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
