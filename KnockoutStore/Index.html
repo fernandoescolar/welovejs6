@@ -10,6 +10,10 @@
     <link href="Content/bootstrap/store-theme.css" rel="stylesheet" />
     <script src="Scripts/libs/jquery/jquery-1.9.1.min.js"></script>
     <script src="Scripts/libs/bootstrap/bootstrap.min.js"></script>
+    <script src="Scripts/libs/knockout/knockout-2.3.0.js"></script>
+
+    <script src="Scripts/app/services/storeService.js"></script>
+    <script src="Scripts/app/viewmodels/ProductListViewModel.js" defer="defer"></script>
 </head>
 <body>
 
@@ -18,7 +22,7 @@
             <ul class="navlinks">
                 <li><a href="index.html">Homepage</a></li>
                 <li><a href="http://mrubino.net/">Marc Rubiño</a></li>
-                <li><a href="http://programandonet.net/">Fernando Escolar</a></li>
+                <li><a href="http://programandonet.com/">Fernando Escolar</a></li>
                 <li><a href="https://github.com/fernandoescolar/welovejs6">Source Code</a></li>
             </ul>
         </div>
@@ -39,6 +43,9 @@
                     <p>Oh…yeah…the guy in the…the $4,000 suit is holding the elevator for a guy who doesn't make that in three months. Come on! Speaking of settling, how's Ann? He's a regular Freddie Wilson, that one.</p>
                     <p class="text-center"><a class="btn" href="index.html">Read more</a></p>
                 </div>
+            </div>
+            <div data-bind="foreach: products">
+                <span data-bind="text: $data.name"></span><br />
             </div>
 
             <hr>
