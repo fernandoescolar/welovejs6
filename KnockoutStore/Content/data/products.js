@@ -67,5 +67,5 @@
 				description: 'Sólo contiene elementos naturales propios de las sales de baño.'
 			}
 		]
-	},
+	}
 ]

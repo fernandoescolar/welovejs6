@@ -1,8 +1,8 @@
-﻿
+﻿'use strict';
 
-var ShoopingCartMV = function() {
+var ShoopingCartVm = function () {
 
-    return {        
+    var self =  {        
         nombre : ko.observable("Marc").extend({ 
             required: true,
             minLength: 3,
@@ -13,10 +13,18 @@ var ShoopingCartMV = function() {
         })
     };
 
+    function loadData() { }
+    
+
+
+    return self;
+
 };
 
-$(function() {
-    ko.applyBindings(new ShoopingCartMV());
-});
+
+ ko.applyBindings(new ShoopingCartVm());
+
+
+
 
 
