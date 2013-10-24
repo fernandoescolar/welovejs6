@@ -68,3 +68,11 @@
     font-size: 12px;
   }
 }
+
+
+/****************** Validation   *****************/
+.validationMessage {
+    background-color: aliceblue;
+    color: red;
+    font-weight: bold;                   
+}

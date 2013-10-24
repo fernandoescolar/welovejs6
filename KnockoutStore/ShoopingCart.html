@@ -1,9 +1,15 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title></title>
-</head>
-<body>
-
-</body>
+    <head>
+        <title>Shooping Cart</title>
+        <link href="Content/bootstrap/store-theme.css" rel="stylesheet" />
+    </head>
+    <body>
+        Nombre: <input type="text" data-bind="value: nombre" />
+        <label data-bind="text: nombre"></label>
+    </body>
 </html>
+<script src="Scripts/libs/jquery/jquery-1.9.1.js"></script>
+<script src="Scripts/libs/knockout/knockout-2.3.0.js"></script>
+<script src="Scripts/libs/knockout/knockout.validation.js"></script>
+<script src="Scripts/app/viewmodels/ShoopingCart.js"></script>
