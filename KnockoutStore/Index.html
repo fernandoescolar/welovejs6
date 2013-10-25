@@ -10,7 +10,7 @@
     <link href="Content/bootstrap/store-theme.css" rel="stylesheet" />
     <script src="Scripts/libs/jquery/jquery-1.9.1.min.js"></script>
     <script src="Scripts/libs/bootstrap/bootstrap.min.js"></script>
-    <script src="Scripts/libs/knockout/knockout-2.3.0.js"></script>
+    <script src="Scripts/libs/knockout/knockout-3.0.0.js"></script>
 
     <script src="Scripts/app/services/mediator.js"></script>
     <script src="Scripts/app/services/storeService.js"></script>
@@ -36,7 +36,7 @@
     <header id="heading">
         <div class="container text-center">
             <h1>Knockout Store</h1>
-            <h4>But this is just a sample demo layout, don't get too excited!</h4>
+            <h4>Con knockout 3.0.0. que salió el 24-10-2013 al medio día!</h4>
         </div>
     </header>
 
@@ -46,7 +46,7 @@
                 <div class="row">
                     <div>
                         <h2>Nuestros productos</h2>
-                        <p>Oh…yeah…the guy in the…the $4,000 suit is holding the elevator for a guy who doesn't make that in three months. Come on! Speaking of settling, how's Ann? He's a regular Freddie Wilson, that one.</p>
+                        <p>Ezequiel, 25-17: El camino del hombre recto está por todos lados rodeado por la avaricia de los egoístas y la tiranía de los hombres malos. Bendito sea aquel pastor que, en nombre de la caridad y de la buena voluntad, saque a los débiles del Valle de la Oscuridad. Porque él es el verdadero guardián de su hermano y el descubridor de los niños perdidos. ¡Y os aseguro que vendré a castigar con gran venganza y furiosa cólera a aquéllos que pretendan envenenar y destruir a mis hermanos! ¡Y tú sabrás que mi nombre es Yavé, cuando mi venganza caiga sobre ti!</p>
                     </div>
                 </div>
                 <div data-bind="foreach: products">
@@ -63,6 +63,7 @@
                     <div>
                         <h2 data-bind="text: name"></h2>
                         <p data-bind="text: description"></p>
+                        <img data-bind="attr: { src: image, alt: name}" />
                     </div>
                 </div>
             </section>
