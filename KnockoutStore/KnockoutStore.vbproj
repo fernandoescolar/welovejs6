@@ -99,9 +99,12 @@
     <Content Include="Content\data\products.js" />
     <None Include="Scripts\libs\jquery\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\app\bindings\fadeVisible.js" />
+    <Content Include="Scripts\app\services\cartService.js" />
     <Content Include="Scripts\app\services\mediator.js" />
     <Content Include="Scripts\app\services\storeService.js" />
-    <Content Include="Scripts\app\viewmodels\ProductListViewModel.js" />
+    <Content Include="Scripts\app\viewmodels\Index.js" />
+    <Content Include="Scripts\app\viewmodels\ProductDetails.js" />
+    <Content Include="Scripts\app\viewmodels\ProductList.js" />
     <Content Include="Scripts\app\viewmodels\ShoopingCart.js" />
     <Content Include="Scripts\libs\bootstrap\bootstrap.js" />
     <Content Include="Scripts\libs\bootstrap\bootstrap.min.js" />

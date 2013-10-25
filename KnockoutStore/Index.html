@@ -14,8 +14,11 @@
 
     <script src="Scripts/app/services/mediator.js"></script>
     <script src="Scripts/app/services/storeService.js"></script>
+    <script src="Scripts/app/services/cartService.js"></script>
     <script src="Scripts/app/bindings/fadeVisible.js"></script>
-    <script src="Scripts/app/viewmodels/ProductListViewModel.js" defer="defer"></script>
+    <script src="Scripts/app/viewmodels/ProductList.js"></script>
+    <script src="Scripts/app/viewmodels/ProductDetails.js"></script>
+    <script src="Scripts/app/viewmodels/Index.js" defer="defer"></script>
 </head>
 <body>
 
@@ -39,21 +42,30 @@
 
     <div id="main-content">
         <div class="container">
-            <div class="row">
-                <div>
-                    <h2>Nuestros productos</h2>
-                    <p>Oh…yeah…the guy in the…the $4,000 suit is holding the elevator for a guy who doesn't make that in three months. Come on! Speaking of settling, how's Ann? He's a regular Freddie Wilson, that one.</p>
+            <section id="products" data-bind="with:ProductList, fadeVisible: ProductList.isVisible">
+                <div class="row">
+                    <div>
+                        <h2>Nuestros productos</h2>
+                        <p>Oh…yeah…the guy in the…the $4,000 suit is holding the elevator for a guy who doesn't make that in three months. Come on! Speaking of settling, how's Ann? He's a regular Freddie Wilson, that one.</p>
+                    </div>
                 </div>
-            </div>
-            <div data-bind="foreach: products">
-                <div class ="product" data-bind="click: $parent.select">
-                    <img data-bind="attr: { src: 'Content/images/' + $data.id + '.jpg', alt: $data.name}" />
-                    <span data-bind="text: $data.name"></span>
-                    <div class="clearfix"></div>
+                <div data-bind="foreach: products">
+                    <div class="product" data-bind="click: $parent.select">
+                        <img data-bind="attr: { src: 'Content/images/' + $data.id + '.jpg', alt: $data.name}" />
+                        <span data-bind="text: $data.name"></span>
+                        <div class="clearfix"></div>
+                    </div>
                 </div>
-            </div>
-
-            <hr>
+            </section>
+            <section id="product" data-bind="with:ProductDetails, fadeVisible: ProductDetails.isVisible">
+                <a href="#" data-bind="click: close">&lt;&lt; Volver</a>
+                <div class="row">
+                    <div>
+                        <h2 data-bind="text: name"></h2>
+                        <p data-bind="text: description"></p>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 
