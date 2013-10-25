@@ -2,14 +2,64 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Shooping Cart</title>
+        <meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="Content/bootstrap/bootstrap.min.css" rel="stylesheet" />
+        <link href="Content/bootstrap/bootstrap-theme.min.css" rel="stylesheet" />
         <link href="Content/bootstrap/store-theme.css" rel="stylesheet" />
     </head>
     <body>
-        Nombre: <input type="text" data-bind="value: nombre" />
+        <nav id="navigation">
+            <div class="container">
+                <ul class="navlinks">
+                    <li><a href="index.html">Homepage</a></li>
+                    <li><a href="http://mrubino.net/">Marc Rubiño</a></li>
+                    <li><a href="http://programandonet.com/">Fernando Escolar</a></li>
+                    <li><a href="https://github.com/fernandoescolar/welovejs6">Source Code</a></li>
+                </ul>
+            </div>
+        </nav>
+     
+        <header id="heading">
+            <div class="container text-center">
+                <h1>Knockout Store</h1>
+                <h4>But this is just a sample demo layout, don't get too excited!</h4>
+            </div>
+        </header>   
+        
+        <h2>Shooping Cart</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio Unidad</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+            </tr>
+            <tbody data-bind="foreach: products">
+                <tr>
+                    <td><label data-bind="text: id" /></td>
+                    <td><label data-bind="text: name" /></td>
+                    <td><label data-bind="text: description" /></td>
+                    <td><label data-bind="text: prize" /></td>
+                    <td><input type="number" data-bind="value:  0" /></td>
+                    <td><label data-bind="text: name" /></td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="footer">
+            <div class="container">
+                <p>Copyright 2013</p>
+            </div>
+        </div>
 
     </body>
 </html>
 <script src="Scripts/libs/jquery/jquery-1.9.1.js"></script>
+<script src="Scripts/libs/bootstrap/bootstrap.min.js"></script>
 <script src="Scripts/libs/knockout/knockout-2.3.0.js"></script>
 <script src="Scripts/libs/knockout/knockout.validation.js"></script>
 <script src="Scripts/app/viewmodels/ShoopingCart.js" defer></script>
+<script src="Scripts/app/services/storeService.js"></script>

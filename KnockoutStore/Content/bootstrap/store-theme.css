@@ -103,3 +103,15 @@
     color: red;
     font-weight: bold;                   
 }
+
+#footer {
+    bottom: 0px;
+    position: absolute;
+    background-color: gainsboro;
+    width: 100%;
+    text-align: center;
+    height: 80px;
+}
+
+
+                
