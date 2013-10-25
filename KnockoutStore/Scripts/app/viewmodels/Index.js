@@ -1,9 +1,18 @@
 ﻿var IndexViewModel = (function () {
 
     function indexViewModel(mediator, storeService, cartService) {
+        var units = ko.observable(cartService.count());
+        
+        mediator.register('cart-changed', function (data) {
+            units(cartService.count());
+        });
+
         return {
             ProductList: new ProductListViewModel(mediator, storeService),
-            ProductDetails: new ProductDetailsViewModel(mediator, cartService)
+            ProductDetails: new ProductDetailsViewModel(mediator, cartService),
+            Cart: {
+                units: units
+            }
         };
     }
 

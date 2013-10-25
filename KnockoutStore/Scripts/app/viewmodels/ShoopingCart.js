@@ -1,34 +1,61 @@
 ﻿'use strict';
 
-var ShoopingCartVm = function (storeService) {
+var ShoopingCartViewModel = function (cartService) {
 
-    var self = {        
-        products: ko.observableArray([])
-        //,
-        //nombre : ko.observable("Marc").extend({ 
-        //    required: true,
-        //    minLength: 3,
-        //    pattern: {
-        //        message: 'Hey this doesnt match my pattern',
-        //        params: '^[A-Z0-9].$'
-        //    }
-        //})
-    };
+    var products = ko.observableArray([]);
+    var total = ko.computed(function() {
+        var result = 0;
+        var list = products();
+        for (var i = 0; i < list.length; i++) {
+            result += list[i].price() * list[i].units();
+        }
+
+        return result;
+    });
 
     function loadData() {
-        storeService.getAllItems().then(function (data) {
-            self.products(data);
+        cartService.getProducts().then(function (data) {
+            var items = [];
+            for (var i = 0; i < data.length; i++) {
+                items.push(ko.mapping.fromJS(data[i]));
+            }
+            products(items);
         });
+    }
+    
+    function saveData() {
+        var items = products();
+        var result = [];
+        for (var i = 0; i < items.length; i++) {
+            result.push(ko.mapping.toJS(items[i]));
+        }
+
+        cartService.update(result);
+    }
+
+    function removeProduct(data) {
+        var items = products();
+        for (var i = 0; i < items.length; i++) {
+            if (items[i].id() === data.id()) {
+                items.splice(i, 1);
+            }
+        }
+        products(items);
     }
 
     loadData();
 
-    return self;
+    return {
+        products: products,
+        total: total,
+        removeProduct: removeProduct,
+        saveData: saveData
+    };
 
 };
 
 
-ko.applyBindings(new ShoopingCartVm(storeService));
+ko.applyBindings(new ShoopingCartViewModel(cartService));
 
 
 

@@ -8,6 +8,15 @@
         <link href="Content/bootstrap/bootstrap.min.css" rel="stylesheet" />
         <link href="Content/bootstrap/bootstrap-theme.min.css" rel="stylesheet" />
         <link href="Content/bootstrap/store-theme.css" rel="stylesheet" />
+
+        <script src="Scripts/libs/jquery/jquery-1.9.1.js"></script>
+        <script src="Scripts/libs/bootstrap/bootstrap.min.js"></script>
+        <script src="Scripts/libs/knockout/knockout-3.0.0.js"></script>
+        <script src="Scripts/libs/knockout/knockout.mapping-latest.js"></script>
+        <script src="Scripts/libs/knockout/knockout.validation.js"></script>
+        <script src="Scripts/app/services/mediator.js"></script>
+        <script src="Scripts/app/services/cartService.js"></script>
+        <script src="Scripts/app/viewmodels/ShoopingCart.js" defer></script>
     </head>
     <body>
         <nav id="navigation">
@@ -23,32 +32,37 @@
      
         <header id="heading">
             <div class="container text-center">
-                <h1>Knockout Store</h1>
+                <h1><a href="Index.html">Knockout Store</a></h1>
                 <h4>Con knockout 3.0.0. que salió el 24-10-2013 al medio día!</h4>
             </div>
         </header>   
         
-        <h2>Shooping Cart</h2>
-        <table class="table table-striped">
-            <tr>
-                <th>#</th>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Precio Unidad</th>
-                <th>Cantidad</th>
-                <th>Precio</th>
-            </tr>
-            <tbody data-bind="foreach: products">
+        <section id="products">
+            <h2>Shooping Cart</h2>
+            <table class="table table-striped">
                 <tr>
-                    <td><label data-bind="text: id" /></td>
-                    <td><label data-bind="text: name" /></td>
-                    <td><label data-bind="text: description" /></td>
-                    <td><label data-bind="text: prize" /></td>
-                    <td><input type="number" data-bind="value:  0" /></td>
-                    <td><label data-bind="text: name" /></td>
+                    <th></th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio Unidad</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
                 </tr>
-            </tbody>
-        </table>
+                <tbody data-bind="foreach: products">
+                    <tr>
+                        <td><img data-bind="click: $parent.removeProduct" class="delete" /></td>
+                        <td><span data-bind="text: name"></span></td>
+                        <td><span data-bind="text: description"></span></td>
+                        <td><span data-bind="text: price"></span></td>
+                        <td><input type="number" type="number" style="width: 50px" data-bind="value:  units" /></td>
+                        <td><span data-bind="text: units() * price()"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><span class="ammount" data-bind="text: 'Total: ' + total() + ' €'"></span></p>
+            <p><a href="#" data-bind="click: saveData">Comprar</a></p>
+        </section>
+
         <div id="footer">
             <div class="container">
                 <p>Copyright 2013</p>
@@ -57,9 +71,3 @@
 
     </body>
 </html>
-<script src="Scripts/libs/jquery/jquery-1.9.1.js"></script>
-<script src="Scripts/libs/bootstrap/bootstrap.min.js"></script>
-<script src="Scripts/libs/knockout/knockout-3.0.0.js"></script>
-<script src="Scripts/libs/knockout/knockout.validation.js"></script>
-<script src="Scripts/app/viewmodels/ShoopingCart.js" defer></script>
-<script src="Scripts/app/services/storeService.js"></script>

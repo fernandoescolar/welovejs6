@@ -6,6 +6,8 @@ var ProductDetailsViewModel = (function () {
     var image = ko.observable();
     var name = ko.observable();
     var description = ko.observable();
+    var price = ko.observable();
+    var features = ko.observableArray([]);
     
     var isVisible = ko.observable(false);
     var cartService;
@@ -15,6 +17,8 @@ var ProductDetailsViewModel = (function () {
         image('Content/images/' + product.id + '.jpg');
         name(product.name);
         description(product.description);
+        price(product.price);
+        features(product.features);
     }
 
     function addToCart() {
@@ -41,6 +45,8 @@ var ProductDetailsViewModel = (function () {
             image: image,
             name: name,
             description: description,
+            price: price,
+            features: features,
             addToCart: addToCart,
             close: close
         };

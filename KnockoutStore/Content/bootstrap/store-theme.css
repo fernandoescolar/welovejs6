@@ -5,6 +5,12 @@ hr {
     display: block;
     width: 90%;
 }
+h1 a,
+h1 a:hover {
+  text-decoration: none;
+  color: black;
+}
+
 #navigation {
   display: block;
   position: fixed;
@@ -125,5 +131,31 @@ hr {
     padding-top: 5px;
 }
 
+.onsale {
+    margin-right: 4px;
+}
 
-                
+#shopping-cart {
+    background-image: url(/Content/images/cart.jpg);
+    background-repeat: no-repeat;
+    padding-left: 45px;
+    position: absolute;
+    right: 25px;
+    top: 65px;
+}
+
+#shopping-cart:hover {
+    text-decoration: none;
+}
+
+.ammount {
+    float: right;
+    font-size: 34px;
+}
+
+.delete {
+    background-image: url(/Content/images/delete.png);
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
