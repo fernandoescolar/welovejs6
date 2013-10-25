@@ -12,7 +12,9 @@
     <script src="Scripts/libs/bootstrap/bootstrap.min.js"></script>
     <script src="Scripts/libs/knockout/knockout-2.3.0.js"></script>
 
+    <script src="Scripts/app/services/mediator.js"></script>
     <script src="Scripts/app/services/storeService.js"></script>
+    <script src="Scripts/app/bindings/fadeVisible.js"></script>
     <script src="Scripts/app/viewmodels/ProductListViewModel.js" defer="defer"></script>
 </head>
 <body>
@@ -39,13 +41,16 @@
         <div class="container">
             <div class="row">
                 <div>
-                    <h2>Our Products</h2>
+                    <h2>Nuestros productos</h2>
                     <p>Oh…yeah…the guy in the…the $4,000 suit is holding the elevator for a guy who doesn't make that in three months. Come on! Speaking of settling, how's Ann? He's a regular Freddie Wilson, that one.</p>
-                    <p class="text-center"><a class="btn" href="index.html">Read more</a></p>
                 </div>
             </div>
             <div data-bind="foreach: products">
-                <span data-bind="text: $data.name"></span><br />
+                <div class ="product" data-bind="click: $parent.select">
+                    <img data-bind="attr: { src: 'Content/images/' + $data.id + '.jpg', alt: $data.name}" />
+                    <span data-bind="text: $data.name"></span>
+                    <div class="clearfix"></div>
+                </div>
             </div>
 
             <hr>

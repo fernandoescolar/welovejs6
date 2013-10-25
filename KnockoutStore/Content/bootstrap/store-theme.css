@@ -1,4 +1,8 @@
-﻿#navigation {
+﻿hr {
+    display: block;
+    width: 90%;
+}
+#navigation {
   display: block;
   position: fixed;
   z-index: 1;
@@ -38,6 +42,29 @@
   width: 100%;
   padding: 40px 0 0 0;
 }
+
+.product {
+    float: left;
+    width: 230px;
+    height: 220px;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.product:hover {
+    background-color: #777777;
+}
+
+.product img {
+    display: block;
+    width: 220px;
+    height: 190px;
+    border: 1px solid #777777;
+}
+.product span {
+    margin-top: 2px;
+} 
 
 /** alternate responsive traits **/
 @media(max-width:767px) {

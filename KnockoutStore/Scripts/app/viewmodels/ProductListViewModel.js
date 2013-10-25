@@ -2,28 +2,31 @@
 
 var ProductListViewModel = (function () {
 
-    var self = {
-        products: ko.observableArray([]),
-        storeService: null,
-    };
+    var products = ko.observableArray([]);
+    var storeService = null;
 
     function loadData() {
-        self.storeService.getAllItems().then(function (data) {
-            self.products(data);
+        storeService.getAllItems().then(function (data) {
+            products(data);
         });
     }
 
-    function productListViewModel(storeService) {
-        self.storeService = storeService;
+    function select(item) {
+        alert(item.name);
+    }
+
+    function productListViewModel(mediator, service) {
+        storeService = service;
         loadData();
 
         return {
-            products: self.products,
+            products: products,
+            select: select
         };
     }
 
     return productListViewModel;
 })();
 
-var viewModel = new ProductListViewModel(storeService);
+var viewModel = new ProductListViewModel(mediator, storeService);
 ko.applyBindings(viewModel);

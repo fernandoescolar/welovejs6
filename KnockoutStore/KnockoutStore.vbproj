@@ -87,6 +87,7 @@
     <Content Include="Content\bootstrap\bootstrap.css" />
     <Content Include="Content\bootstrap\bootstrap.min.css" />
     <Content Include="Content\bootstrap\store-theme.css" />
+    <Content Include="Content\data\categories.js" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\images\0.jpg" />
     <Content Include="Content\images\1.jpg" />
@@ -97,6 +98,8 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\data\products.js" />
     <None Include="Scripts\libs\jquery\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\app\bindings\fadeVisible.js" />
+    <Content Include="Scripts\app\services\mediator.js" />
     <Content Include="Scripts\app\services\storeService.js" />
     <Content Include="Scripts\app\viewmodels\ProductListViewModel.js" />
     <Content Include="Scripts\app\viewmodels\ShoopingCart.js" />
