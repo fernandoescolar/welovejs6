@@ -15,7 +15,7 @@ var UserInfo = ko.validatedObservable( {
                 alert('Thank you.');
             } else {
                 alert('Please check your submission.');
-            }
+            } 
             return false;
         }
 
