@@ -8,15 +8,6 @@
         <link href="Content/bootstrap/bootstrap.min.css" rel="stylesheet" />
         <link href="Content/bootstrap/bootstrap-theme.min.css" rel="stylesheet" />
         <link href="Content/bootstrap/store-theme.css" rel="stylesheet" />
-
-        <script src="Scripts/libs/jquery/jquery-1.9.1.js"></script>
-        <script src="Scripts/libs/bootstrap/bootstrap.min.js"></script>
-        <script src="Scripts/libs/knockout/knockout-3.0.0.js"></script>
-        <script src="Scripts/libs/knockout/knockout.mapping-latest.js"></script>
-        <script src="Scripts/libs/knockout/knockout.validation.js"></script>
-        <script src="Scripts/app/services/mediator.js"></script>
-        <script src="Scripts/app/services/cartService.js"></script>
-        <script src="Scripts/app/viewmodels/ShoopingCart.js" defer></script>
     </head>
     <body>
         <nav id="navigation">
@@ -60,14 +51,23 @@
                 </tbody>
             </table>
             <p><span class="ammount" data-bind="text: 'Total: ' + total() + ' €'"></span></p>
-            <p><a href="#" data-bind="click: saveData">Comprar</a></p>
+            <a data-toggle="modal" href="UserInfo.html" data-target="#myModal">User Info</a>
+            <p>
+                <a href="#" data-bind="click: saveData">Comprar</a>
+            </p>
+            
         </section>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal"></div><!-- /.modal -->
 
-        <div id="footer">
-            <div class="container">
-                <p>Copyright 2013</p>
-            </div>
-        </div>
 
     </body>
 </html>
+<script src="Scripts/libs/jquery/jquery-1.9.1.js"></script>
+<script src="Scripts/libs/bootstrap/bootstrap.min.js"></script>
+<script src="Scripts/libs/knockout/knockout-3.0.0.js"></script>
+<script src="Scripts/libs/knockout/knockout.mapping-latest.js"></script>
+<script src="Scripts/libs/knockout/knockout.validation.js"></script>
+<script src="Scripts/app/services/mediator.js"></script>
+<script src="Scripts/app/services/cartService.js"></script>
+<script src="Scripts/app/viewmodels/ShoopingCart.js" defer></script>

@@ -121,6 +121,7 @@
     <Content Include="Scripts\app\viewmodels\ProductDetails.js" />
     <Content Include="Scripts\app\viewmodels\ProductList.js" />
     <Content Include="Scripts\app\viewmodels\ShoopingCart.js" />
+    <Content Include="Scripts\app\viewmodels\UserInfo.js" />
     <Content Include="Scripts\libs\bootstrap\bootstrap.js" />
     <Content Include="Scripts\libs\bootstrap\bootstrap.min.js" />
     <Content Include="Scripts\libs\jquery\jquery-1.9.1.js" />
@@ -129,6 +130,7 @@
     <Content Include="Scripts\libs\knockout\knockout.mapping-latest.js" />
     <Content Include="Scripts\libs\knockout\knockout.validation.js" />
     <Content Include="ShoopingCart.html" />
+    <Content Include="UserInfo.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
