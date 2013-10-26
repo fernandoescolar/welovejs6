@@ -2,21 +2,25 @@
 'use strict';
 
 
-var UserInfo = function () {
-
-    var sef = {        
+var UserInfo = ko.validatedObservable( {
+       
         email: ko.observable().extend({ 
-            required: true,
+            required: { message: 'Campo obligatorio.' },
             minLength: 3
         }),
         password: ko.observable(),
-        condiciones: ko.observable(false)
-    };
+        condiciones: ko.observable(false),
+        submit: function () {
+            if (this.isValid()) {
+                alert('Thank you.');
+            } else {
+                alert('Please check your submission.');
+            }
+            return false;
+        }
 
 
-    return self;
-
-};
+});
 
 
-ko.applyBindings(new UserInfo(), document.getElementById("UserForm"));
+ko.applyBindings(UserInfo, document.getElementById("UserForm"));
