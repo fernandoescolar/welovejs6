@@ -131,6 +131,10 @@
     <Content Include="Scripts\libs\knockout\knockout.mapping-latest.js" />
     <Content Include="Scripts\libs\knockout\knockout.validation.js" />
     <Content Include="ShoopingCart.html" />
+    <Content Include="Templates\product-template.html" />
+    <Content Include="Templates\products-item-template.html" />
+    <Content Include="Templates\products-template.html" />
+    <Content Include="UserInfo.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -173,12 +177,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <Content Include="Scripts\libs\jquery\jquery-1.9.1.min.map" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
