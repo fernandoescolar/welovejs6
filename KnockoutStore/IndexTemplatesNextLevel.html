@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title>Knockout Store</title>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="Content/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap/store-theme.css" rel="stylesheet" />
+    <script src="Scripts/libs/jquery/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/libs/bootstrap/bootstrap.min.js"></script>
+    <script src="Scripts/libs/knockout/knockout-3.0.0.js"></script>
+
+    <script src="Scripts/app/services/mediator.js"></script>
+    <script src="Scripts/app/services/storeService.js"></script>
+    <script src="Scripts/app/services/cartService.js"></script>
+    <script src="Scripts/app/bindings/fadeVisible.js"></script>
+    <script src="Scripts/app/viewmodels/ProductList.js"></script>
+    <script src="Scripts/app/viewmodels/ProductDetails.js"></script>
+    <script src="Scripts/app/viewmodels/Index.js"></script>
+    <script type="text/javascript" defer="defer">
+        function loadTemplates(list, appStart) {
+            var loadedTemplates = [];
+            ko.utils.arrayForEach(list, function (name) {
+                $.get('Templates/' + name + '.html', function (template) {
+                    $('body').append('<script id="' + name + '" type="text/html">' + template + '<\/script>');
+                    loadedTemplates.push(name);
+                    if (list.length === loadedTemplates.length) {
+                        appStart();                        
+                    }
+                });
+            });
+        }
+
+        loadTemplates(['products-template', 'products-item-template', 'product-template'], function() {
+            var viewModel = new IndexViewModel(mediator, storeService, cartService);
+            ko.applyBindings(viewModel);
+        });
+
+    </script>
+</head>
+<body>
+    <nav id="navigation">
+        <div class="container">
+            <ul class="navlinks">
+                <li><a href="index.html">Homepage</a></li>
+                <li><a href="http://mrubino.net/">Marc Rubiño</a></li>
+                <li><a href="http://programandonet.com/">Fernando Escolar</a></li>
+                <li><a href="https://github.com/fernandoescolar/welovejs6">Source Code</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="heading">
+        <div class="container text-center">
+            <h1>Knockout Store</h1>
+            <h4>Con knockout 3.0.0. que salió el 24-10-2013 al medio día!</h4>
+        </div>
+    </header>
+
+    <div id="main-content">
+        <div class="container">
+            <section id="products" data-bind="fadeVisible: ProductList.isVisible, template: { name: 'products-template', data: ProductList }"></section>
+            <section id="product" data-bind="fadeVisible: ProductDetails.isVisible, template: { name: 'product-template', data: ProductDetails }"></section>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="container">
+            <p>Copyright 2013</p>
+        </div>
+    </div>
+</body>
+</html>

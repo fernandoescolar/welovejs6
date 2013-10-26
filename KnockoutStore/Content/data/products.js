@@ -282,7 +282,7 @@
 
                    id: 14,
                    name: 'Pegatinas Tokiota',
-                   description: 'OKIOTA es una compañía nacida en Barcelona, muy cercana a sus clientes.Flexible a cada cliente y escenario, pero procedimental, para garantizar la calidad y el éxito de los proyectos.',
+                   description: 'TOKIOTA es una compañía nacida en Barcelona, muy cercana a sus clientes.Flexible a cada cliente y escenario, pero procedimental, para garantizar la calidad y el éxito de los proyectos.',
                    price: 5.00,
                    features: []
                }
