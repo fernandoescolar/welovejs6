@@ -1,6 +1,4 @@
-﻿
-'use strict';
-
+﻿'use strict';
 
 var UserInfo = ko.validatedObservable( {
        
@@ -11,7 +9,7 @@ var UserInfo = ko.validatedObservable( {
         password: ko.observable(),
         condiciones: ko.observable(false),
         submit: function () {
-            if (this.isValid()) {
+            if (UserInfo.isValid()) {
                 alert('Thank you.');
             } else {
                 alert('Please check your submission.');

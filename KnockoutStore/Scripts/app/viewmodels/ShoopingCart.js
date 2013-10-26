@@ -2,6 +2,15 @@
 
 var ShoopingCartViewModel = function (cartService) {
 
+    //var mapping = {
+    //    'children': {
+    //        key: function (data) {
+    //            return ko.utils.unwrapObservable(data.id);
+    //        }
+    //    }
+    //}
+    //var viewModel = ko.mapping.fromJS(data, mapping);
+    
     var products = ko.observableArray([]);
     var total = ko.computed(function() {
         var result = 0;
