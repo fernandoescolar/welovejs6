@@ -106,7 +106,8 @@
     <Content Include="Content\images\cart.jpg" />
     <Content Include="Content\images\delete.png" />
     <Content Include="Content\images\oferta-especial.jpg" />
-    <Content Include="IndexNextLevel.html" />
+    <Content Include="IndexTemplates.html" />
+    <Content Include="IndexTemplatesNextLevel.html" />
     <Content Include="Index.html" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
@@ -129,6 +130,9 @@
     <Content Include="Scripts\libs\knockout\knockout.mapping-latest.js" />
     <Content Include="Scripts\libs\knockout\knockout.validation.js" />
     <Content Include="ShoopingCart.html" />
+    <Content Include="Templates\product-template.html" />
+    <Content Include="Templates\products-item-template.html" />
+    <Content Include="Templates\products-template.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
